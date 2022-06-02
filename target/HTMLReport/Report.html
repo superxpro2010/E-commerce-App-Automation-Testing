@@ -1,0 +1,1465 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+        <link rel="stylesheet" href="html/material-icons.css">
+        <link rel="stylesheet" href="html/v3html-style.css">
+	
+	<title>HTML Extent</title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+			
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent dark default hide-overflow bdd-report'>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+        <a href="#" class="brand-logo black"><img src="html/logo.png"></a>
+        		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+			<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'>Test Summary Report By Alaa Emad</span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Jun 2, 2022 12:58:54 AM</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>@End-To-End</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+<div id='test-view-charts' class='subview-full'>
+    <div id='charts-row' class='row nm-v nm-h'>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Features</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='parent-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='$91%'>
+                    <span class='strong'>11</span> features passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='8%'>
+                    1</span> features failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> skipped
+                </div>
+            </div>
+        </div>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Scenarios</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='child-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='91%'>
+                    <span class='strong'>11</span> scenarios passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='8%'>
+                    1</span> scenarios failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> others
+                </div>
+            </div>
+        </div>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Steps</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='grandchild-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='98%'>
+                    <span class='strong'>123</span> steps passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    1</span> steps failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    1</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> others
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="timeline-chart" class="row nm-v nm-h">
+        <div class="col s12 m12 l12 np-h">
+            <div class="card-panel">
+                <div class='left panel-name'>Timeline (seconds)</div>
+                <div class="chart-box" style="width:98%;max-height:145px;">
+                    <canvas id="timeline" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>User could register with valid data</span>
+						<span class='test-time'>Jun 2, 2022 12:59:04 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario node' test-id='2' status='pass'>
+
+	<span class='duration right label'>00 00 31.735</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: User could register with valid data</div>
+	</div>
+	
+	
+		<div class='category-list'>
+				<span class='category label'>@End-To-End</span>
+		</div>
+	
+	<ul class='steps'>
+		<li test-id='3' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.RegistrationSteps.user_has_a_valid_email())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user has a valid email</div>
+
+
+		</li>
+		<li test-id='4' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.RegistrationSteps.user_navigate_to_home_page())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user navigate to home page</div>
+
+
+		</li>
+		<li test-id='5' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.RegistrationSteps.userClicksOnTheRegisterLink())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user clicks on the register link</div>
+
+
+		</li>
+		<li test-id='6' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.RegistrationSteps.userEnteredTheValidData())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user entered the valid data</div>
+
+
+		</li>
+		<li test-id='7' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.RegistrationSteps.userShouldSeeMessage(java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then complete Registration message "Your registration completed" should be displayed</div>
+
+
+		</li>
+		<li test-id='8' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userShouldLoginSuccessfully())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user should login successfully</div>
+
+
+		</li>
+		<li test-id='9' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userClickOnLogOutButton())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user click on log out button</div>
+
+
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>User Can Login Successfully.</span>
+						<span class='test-time'>Jun 2, 2022 12:59:36 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario node' test-id='12' status='pass'>
+
+	<span class='duration right label'>00 00 05.385</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: User Can Login Normally.</div>
+	</div>
+	
+	
+	
+	<ul class='steps'>
+		<li test-id='13' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userHadAValidRegisteredAccount())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user had a valid registered account</div>
+
+
+		</li>
+		<li test-id='14' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.RegistrationSteps.user_navigate_to_home_page())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user navigate to home page</div>
+
+
+		</li>
+		<li test-id='15' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userClickOnLogIn())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on log in</div>
+
+
+		</li>
+		<li test-id='16' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.user_enter_valid_username_and_password())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user enter valid username and password</div>
+
+
+		</li>
+		<li test-id='17' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.LoginSteps.userClickOnLogInButton())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on log in button</div>
+
+
+		</li>
+		<li test-id='18' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userShouldLoginSuccessfully())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should login successfully</div>
+
+
+		</li>
+		<li test-id='19' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userClickOnLogOutButton())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on log out button</div>
+
+
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='21'>
+					<div class='test-heading'>
+						<span class='test-name'>User could reset his/her password successfully</span>
+						<span class='test-time'>Jun 2, 2022 12:59:41 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario node' test-id='22' status='pass'>
+
+	<span class='duration right label'>00 00 04.548</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: User could reset his/her password successfully</div>
+	</div>
+	
+	
+	
+	<ul class='steps'>
+		<li test-id='23' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.user_opens_the_Website())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user opens the Website</div>
+
+
+		</li>
+		<li test-id='24' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userClickOnLogIn())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on log in</div>
+
+
+		</li>
+		<li test-id='25' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.ResetPasswordSteps.userClickOnForgotPassword())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user clicks on the forget password link</div>
+
+
+		</li>
+		<li test-id='26' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.ResetPasswordSteps.enterHisValidEmail())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And enter his valid email</div>
+
+
+		</li>
+		<li test-id='27' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.ResetPasswordSteps.userClicksRecoverButton())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user clicks RecoverButton</div>
+
+
+		</li>
+		<li test-id='28' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.ResetPasswordSteps.userShouldSeeMessageAtTheTop(java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should see message "Email with instructions has been sent to you."at the top</div>
+
+
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='30'>
+					<div class='test-heading'>
+						<span class='test-name'>Logged User could search for any product</span>
+						<span class='test-time'>Jun 2, 2022 12:59:46 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario node' test-id='31' status='pass'>
+
+	<span class='duration right label'>00 00 05.874</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: User Can Search For Any Product</div>
+	</div>
+	
+	
+	
+	<ul class='steps'>
+		<li test-id='32' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.user_opens_the_Website())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user opens the Website</div>
+
+
+		</li>
+		<li test-id='33' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userClickOnLogIn())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on log in</div>
+
+
+		</li>
+		<li test-id='34' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.user_enter_valid_username_and_password())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user enter valid username and password</div>
+
+
+		</li>
+		<li test-id='35' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.LoginSteps.userClickOnLogInButton())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on log in button</div>
+
+
+		</li>
+		<li test-id='36' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userShouldLoginSuccessfully())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should login successfully</div>
+
+
+		</li>
+		<li test-id='37' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.SearchSteps.userTypesProductNameOnTheSearchBar(java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user types product name "Apple" on the search bar</div>
+
+
+		</li>
+		<li test-id='38' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.SearchSteps.userClicksOnTheSearchButton())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user clicks on the search button</div>
+
+
+		</li>
+		<li test-id='39' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.SearchSteps.systemShouldDisplayTheSearchResults())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then system should display the search results</div>
+
+
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='41'>
+					<div class='test-heading'>
+						<span class='test-name'>Logged User could switch between currencies US-Euro</span>
+						<span class='test-time'>Jun 2, 2022 12:59:52 AM</span>
+						<span class='test-status right fail'>Fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario node' test-id='42' status='fail'>
+
+	<span class='duration right label'>00 00 12.354</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span> Scenario: Logged User could switch between currencies US-Euro</div>
+	</div>
+	
+	
+	
+	<ul class='steps'>
+		<li test-id='43' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userHadAValidRegisteredAccount())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user had a valid registered account</div>
+
+
+		</li>
+		<li test-id='44' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.RegistrationSteps.user_navigate_to_home_page())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user navigate to home page</div>
+
+
+		</li>
+		<li test-id='45' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userClickOnLogIn())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on log in</div>
+
+
+		</li>
+		<li test-id='46' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.user_enter_valid_username_and_password())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user enter valid username and password</div>
+
+
+		</li>
+		<li test-id='47' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.LoginSteps.userClickOnLogInButton())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on log in button</div>
+
+
+		</li>
+		<li test-id='48' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userShouldLoginSuccessfully())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should login successfully</div>
+
+
+		</li>
+		<li test-id='49' class='node when Fail' status='Fail'>
+			<div class="step-name" title="(stepDefinitions.ChangeCurrency.userChangeTheCurrency())"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>When user change the currency.</div>
+
+
+					<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#Email"}
+  (Session info: chrome=102.0.5005.63)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.1', revision: 'e8fcc2cecf'
+System info: host: 'LAPTOP-RPNRCH3T', ip: '26.11.254.138', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [654aaa1dab9d60e014a2c06d9b5a4848, findElement {using=id, value=Email}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.63, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\Users\Alaa\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:1688}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:1688/devtool..., se:cdpVersion: 102.0.5005.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 654aaa1dab9d60e014a2c06d9b5a4848
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at pages.LoginPage.setEmail(LoginPage.java:27)
+	at pages.LoginPage.loginSteps(LoginPage.java:57)
+	at stepDefinitions.ChangeCurrency.userChangeTheCurrency(ChangeCurrency.java:18)
+	at ✽.user change the currency.(file:///D:/Learning/EG%20FWD/Project/E-commerce%20App%20Automation%20Testing/src/main/resources/features/SC05_ChangeCurrency.feature:12)
+</textarea>
+		</li>
+		<li test-id='50' class='node then Skip' status='Skip'>
+			<div class="step-name" title="(stepDefinitions.ChangeCurrency.theCurrencyShouldChangedSuccessfully())"><span class='status skip' title='Skip'><i class='material-icons'>redo</i></span>Then the currency should changed successfully.</div>
+
+
+					<div class="node-step">Step skipped</div>
+		</li>
+		<li test-id='51' class='node * Pass' status='Pass'>
+			<div class="step-name" title="(AFTER)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>stepDefinitions.Hooks.user_close_the_driver(io.cucumber.java.Scenario)</div>
+
+
+					<div class="node-step">screenshot</div>
+					<div class='screenshots'>
+						<img width='80' height='40' onerror='this.style.display="none"' data-featherlight='../ScreenShots/FailedTestCases/embedded1.png' src='../ScreenShots/FailedTestCases/embedded1.png'>
+					</div>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='52'>
+					<div class='test-heading'>
+						<span class='test-name'>Logged user could select different Categories</span>
+						<span class='test-time'>Jun 2, 2022 01:00:04 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario node' test-id='53' status='pass'>
+
+	<span class='duration right label'>00 00 03.283</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Logged user could select different Categories</div>
+	</div>
+	
+	
+	
+	<ul class='steps'>
+		<li test-id='54' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.user_opens_the_Website())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user opens the Website</div>
+
+
+		</li>
+		<li test-id='55' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userClickOnLogIn())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on log in</div>
+
+
+		</li>
+		<li test-id='56' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.user_enter_valid_username_and_password())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user enter valid username and password</div>
+
+
+		</li>
+		<li test-id='57' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.LoginSteps.userClickOnLogInButton())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on log in button</div>
+
+
+		</li>
+		<li test-id='58' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userShouldLoginSuccessfully())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user should login successfully</div>
+
+
+		</li>
+		<li test-id='59' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.ChangeCategorySteps.userHoverOverTheComputersCategory())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user hover over the Computers category</div>
+
+
+		</li>
+		<li test-id='60' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.ChangeCategorySteps.userChooseNotebookSubCategory())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user choose Notebook sub category.</div>
+
+
+		</li>
+		<li test-id='61' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.ChangeCategorySteps.theCategoryShouldBeOpened())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the category should be opened.</div>
+
+
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='63'>
+					<div class='test-heading'>
+						<span class='test-name'>Logged user could filter with color</span>
+						<span class='test-time'>Jun 2, 2022 01:00:08 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+	<div class='test-desc'>  //***Note**** in this case you should select specific category like Apparel > Shoes*</div>
+
+<div class='scenario node' test-id='64' status='pass'>
+
+	<span class='duration right label'>00 00 03.665</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Logged user could filter with color</div>
+	</div>
+	
+	
+	
+	<ul class='steps'>
+		<li test-id='65' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.user_opens_the_Website())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user opens the Website</div>
+
+
+		</li>
+		<li test-id='66' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userClickOnLogIn())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on log in</div>
+
+
+		</li>
+		<li test-id='67' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.user_enter_valid_username_and_password())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user enter valid username and password</div>
+
+
+		</li>
+		<li test-id='68' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.LoginSteps.userClickOnLogInButton())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on log in button</div>
+
+
+		</li>
+		<li test-id='69' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userShouldLoginSuccessfully())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user should login successfully</div>
+
+
+		</li>
+		<li test-id='70' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.user_select_the_shoes_sub_category())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user select the shoes sub-category</div>
+
+
+		</li>
+		<li test-id='71' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.FilterByColor.userFilterByColor())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user filter by color</div>
+
+
+		</li>
+		<li test-id='72' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.FilterByColor.theFilteredResultsShouldBeDisplayed())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the filtered results should be displayed</div>
+
+
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='74'>
+					<div class='test-heading'>
+						<span class='test-name'>Logged user could select different tags</span>
+						<span class='test-time'>Jun 2, 2022 01:00:11 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario node' test-id='75' status='pass'>
+
+	<span class='duration right label'>00 00 06.633</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Logged user could select different tags</div>
+	</div>
+	
+	
+	
+	<ul class='steps'>
+		<li test-id='76' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.user_opens_the_Website())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user opens the Website</div>
+
+
+		</li>
+		<li test-id='77' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userClickOnLogIn())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on log in</div>
+
+
+		</li>
+		<li test-id='78' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.user_enter_valid_username_and_password())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user enter valid username and password</div>
+
+
+		</li>
+		<li test-id='79' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.LoginSteps.userClickOnLogInButton())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on log in button</div>
+
+
+		</li>
+		<li test-id='80' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userShouldLoginSuccessfully())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user should login successfully</div>
+
+
+		</li>
+		<li test-id='81' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.user_select_the_shoes_sub_category())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user select the shoes sub-category</div>
+
+
+		</li>
+		<li test-id='82' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.SelectTagsSteps.userSelectDifferentTags())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user select different tags</div>
+
+
+		</li>
+		<li test-id='83' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.SelectTagsSteps.theFilteredResultsShouldBeOpenedNormally())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the filtered results should be opened normally</div>
+
+
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='85'>
+					<div class='test-heading'>
+						<span class='test-name'>Logged user could add different products to Shopping cart</span>
+						<span class='test-time'>Jun 2, 2022 01:00:18 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario node' test-id='86' status='pass'>
+
+	<span class='duration right label'>00 00 41.256</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Logged user should add different products to Shopping cart</div>
+	</div>
+	
+	
+	
+	<ul class='steps'>
+		<li test-id='87' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.user_opens_the_Website())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user opens the Website</div>
+
+
+		</li>
+		<li test-id='88' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userClickOnLogIn())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on log in</div>
+
+
+		</li>
+		<li test-id='89' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.user_enter_valid_username_and_password())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user enter valid username and password</div>
+
+
+		</li>
+		<li test-id='90' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.LoginSteps.userClickOnLogInButton())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on log in button</div>
+
+
+		</li>
+		<li test-id='91' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userShouldLoginSuccessfully())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user should login successfully</div>
+
+
+		</li>
+		<li test-id='92' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.RandomCategory.userSelectRandomCategory())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user select random category</div>
+
+
+		</li>
+		<li test-id='93' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.RandomCategory.userShouldRedirectedToThePageOfTheSelectedCategory())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should redirected to the page of the selected category</div>
+
+
+		</li>
+		<li test-id='94' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.AddToCart.userClickOnRandomProduct())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user click on random product</div>
+
+
+		</li>
+		<li test-id='95' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.AddToCart.userCheckIfTheProductHaveAttributes())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user check if the product have attributes</div>
+
+
+		</li>
+		<li test-id='96' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.AddToCart.userClickOnAddToCart())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on add to cart</div>
+
+
+		</li>
+		<li test-id='97' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.RandomCategory.userSelectRandomCategory())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user select random category</div>
+
+
+		</li>
+		<li test-id='98' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.RandomCategory.userShouldRedirectedToThePageOfTheSelectedCategory())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should redirected to the page of the selected category</div>
+
+
+		</li>
+		<li test-id='99' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.AddToCart.userClickOnRandomProduct())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user click on random product</div>
+
+
+		</li>
+		<li test-id='100' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.AddToCart.userCheckIfTheProductHaveAttributes())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user check if the product have attributes</div>
+
+
+		</li>
+		<li test-id='101' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.AddToCart.userClickOnAddToCart())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on add to cart</div>
+
+
+		</li>
+		<li test-id='102' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.RandomCategory.userSelectRandomCategory())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user select random category</div>
+
+
+		</li>
+		<li test-id='103' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.RandomCategory.userShouldRedirectedToThePageOfTheSelectedCategory())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should redirected to the page of the selected category</div>
+
+
+		</li>
+		<li test-id='104' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.AddToCart.userClickOnRandomProduct())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user click on random product</div>
+
+
+		</li>
+		<li test-id='105' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.AddToCart.userCheckIfTheProductHaveAttributes())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user check if the product have attributes</div>
+
+
+		</li>
+		<li test-id='106' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.AddToCart.userClickOnAddToCart())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on add to cart</div>
+
+
+		</li>
+		<li test-id='107' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.AddToCart.userShouldFoundTheProductAddedToCartInShoppingCart())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should found the product added to cart in shopping cart</div>
+
+
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='109'>
+					<div class='test-heading'>
+						<span class='test-name'>SC10- Logged user could add different products to Wishlist</span>
+						<span class='test-time'>Jun 2, 2022 01:00:59 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario node' test-id='110' status='pass'>
+
+	<span class='duration right label'>00 00 23.178</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Logged user could add different products to Wishlist</div>
+	</div>
+	
+	
+	
+	<ul class='steps'>
+		<li test-id='111' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.user_opens_the_Website())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user opens the Website</div>
+
+
+		</li>
+		<li test-id='112' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.user_enter_valid_username_and_password())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user enter valid username and password</div>
+
+
+		</li>
+		<li test-id='113' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.LoginSteps.userClickOnLogInButton())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on log in button</div>
+
+
+		</li>
+		<li test-id='114' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userShouldLoginSuccessfully())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user should login successfully</div>
+
+
+		</li>
+		<li test-id='115' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.RandomCategory.userSelectRandomCategory())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user select random category</div>
+
+
+		</li>
+		<li test-id='116' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.RandomCategory.userShouldRedirectedToThePageOfTheSelectedCategory())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should redirected to the page of the selected category</div>
+
+
+		</li>
+		<li test-id='117' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.AddToCart.userClickOnRandomProduct())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user click on random product</div>
+
+
+		</li>
+		<li test-id='118' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.AddToCart.userCheckIfTheProductHaveAttributes())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user check if the product have attributes</div>
+
+
+		</li>
+		<li test-id='119' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.WishList.userClickOnAddToWishlist())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on add to wishlist</div>
+
+
+		</li>
+		<li test-id='120' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.RandomCategory.userSelectRandomCategory())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user select random category</div>
+
+
+		</li>
+		<li test-id='121' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.RandomCategory.userShouldRedirectedToThePageOfTheSelectedCategory())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should redirected to the page of the selected category</div>
+
+
+		</li>
+		<li test-id='122' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.AddToCart.userClickOnRandomProduct())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user click on random product</div>
+
+
+		</li>
+		<li test-id='123' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.AddToCart.userCheckIfTheProductHaveAttributes())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user check if the product have attributes</div>
+
+
+		</li>
+		<li test-id='124' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.WishList.userClickOnAddToWishlist())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on add to wishlist</div>
+
+
+		</li>
+		<li test-id='125' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.WishList.userShouldFoundTheProductAddedToWishlistInTheWishlist())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should found the product added to wishlist in the wishlist</div>
+
+
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='127'>
+					<div class='test-heading'>
+						<span class='test-name'>SC11- Logged user could add different products to compare list</span>
+						<span class='test-time'>Jun 2, 2022 01:01:22 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario node' test-id='128' status='pass'>
+
+	<span class='duration right label'>00 00 18.066</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Logged user could add different products to compare list</div>
+	</div>
+	
+	
+	
+	<ul class='steps'>
+		<li test-id='129' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.user_opens_the_Website())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user opens the Website</div>
+
+
+		</li>
+		<li test-id='130' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.user_enter_valid_username_and_password())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user enter valid username and password</div>
+
+
+		</li>
+		<li test-id='131' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.LoginSteps.userClickOnLogInButton())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on log in button</div>
+
+
+		</li>
+		<li test-id='132' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.Hooks.userShouldLoginSuccessfully())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user should login successfully</div>
+
+
+		</li>
+		<li test-id='133' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.RandomCategory.userSelectRandomCategory())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user select random category</div>
+
+
+		</li>
+		<li test-id='134' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.RandomCategory.userShouldRedirectedToThePageOfTheSelectedCategory())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should redirected to the page of the selected category</div>
+
+
+		</li>
+		<li test-id='135' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.AddToCart.userClickOnRandomProduct())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user click on random product</div>
+
+
+		</li>
+		<li test-id='136' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.AddToCart.userCheckIfTheProductHaveAttributes())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user check if the product have attributes</div>
+
+
+		</li>
+		<li test-id='137' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.CompareListSteps.userClickOnAddToCompareList())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on add to compare list</div>
+
+
+		</li>
+		<li test-id='138' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.RandomCategory.userSelectRandomCategory())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given user select random category</div>
+
+
+		</li>
+		<li test-id='139' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.RandomCategory.userShouldRedirectedToThePageOfTheSelectedCategory())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should redirected to the page of the selected category</div>
+
+
+		</li>
+		<li test-id='140' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.AddToCart.userClickOnRandomProduct())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user click on random product</div>
+
+
+		</li>
+		<li test-id='141' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.AddToCart.userCheckIfTheProductHaveAttributes())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user check if the product have attributes</div>
+
+
+		</li>
+		<li test-id='142' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.CompareListSteps.userClickOnAddToCompareList())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on add to compare list</div>
+
+
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='144'>
+					<div class='test-heading'>
+						<span class='test-name'>SC12- Create successful Order</span>
+						<span class='test-time'>Jun 2, 2022 01:01:40 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario node' test-id='145' status='pass'>
+
+	<span class='duration right label'>00 00 08.200</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Create successful Order</div>
+	</div>
+	
+	
+	
+	<ul class='steps'>
+		<li test-id='146' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.SuccessfulOrderSteps.goToShoppingCart())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given Go to shopping cart</div>
+
+
+		</li>
+		<li test-id='147' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.SuccessfulOrderSteps.userCheckOnTermsOfService())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user check on terms of service</div>
+
+
+		</li>
+		<li test-id='148' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.SuccessfulOrderSteps.userClickOnCheckoutButton())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on checkout button</div>
+
+
+		</li>
+		<li test-id='149' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.SuccessfulOrderSteps.userChoseCountry())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user chose country</div>
+
+
+		</li>
+		<li test-id='150' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.SuccessfulOrderSteps.userChoseCity())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user chose city</div>
+
+
+		</li>
+		<li test-id='151' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.SuccessfulOrderSteps.userWriteAddress())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user write address</div>
+
+
+		</li>
+		<li test-id='152' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.SuccessfulOrderSteps.userEnterZipCode())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user enter zip code</div>
+
+
+		</li>
+		<li test-id='153' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.SuccessfulOrderSteps.userEnterPhoneNumber())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user enter phone number</div>
+
+
+		</li>
+		<li test-id='154' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.SuccessfulOrderSteps.userClickOnFirstContinueButton())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on first continue button</div>
+
+
+		</li>
+		<li test-id='155' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.SuccessfulOrderSteps.userClickOnSecondContinueButton())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on second continue button</div>
+
+
+		</li>
+		<li test-id='156' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.SuccessfulOrderSteps.userClickOnThirdContinueButton())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on third continue button</div>
+
+
+		</li>
+		<li test-id='157' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.SuccessfulOrderSteps.userClickOnFourthContinueButton())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on fourth continue button</div>
+
+
+		</li>
+		<li test-id='158' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.SuccessfulOrderSteps.userClickOnConfirmOrderButton())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user click on confirm order button</div>
+
+
+		</li>
+		<li test-id='159' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.SuccessfulOrderSteps.userShouldRedirectedToThePageOfConfirmedOrder())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should redirected to the page of confirmed order</div>
+
+
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<div id='step-filters' class="right sr-filters">
+				<a class="btn-floating waves-effect waves-light green" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></a>
+				<a class="btn-floating waves-effect waves-light red" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light red darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light pink text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></a>
+				<a class="btn-floating waves-effect waves-light orange" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></a>
+				<a class="btn-floating waves-effect waves-light teal" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></a>
+				<a class="btn-floating waves-effect waves-light grey" status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></a>
+			</div>
+			<h5 class='test-name'></h5>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view --><div id='category-view' class='view hide'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='category-collection' class='category-collection'>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@End-To-End</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jun 2, 2022 12:59:04 AM</td>
+										<td class='linked' test-id='2'>User could register with valid data</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view --><div id='exception-view' class='view hide'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='exception-collection' class='exception-collection'>
+				<li class='exception displayed active'>
+					<div class='exception-heading'>
+						<span class='exception-name'>org.openqa.selenium.NoSuchElementException</span>
+						<span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+					</div>
+					<div class='exception-content hide'>
+						<div class='exception-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>StackTrace</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jun 2, 2022 12:59:54 AM</td>
+										<td class='linked' test-id='49'>When user change the currency.</td>
+										<td>
+											<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#Email"}
+  (Session info: chrome=102.0.5005.63)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.1', revision: 'e8fcc2cecf'
+System info: host: 'LAPTOP-RPNRCH3T', ip: '26.11.254.138', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [654aaa1dab9d60e014a2c06d9b5a4848, findElement {using=id, value=Email}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.63, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\Users\Alaa\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:1688}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:1688/devtool..., se:cdpVersion: 102.0.5005.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 654aaa1dab9d60e014a2c06d9b5a4848
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at pages.LoginPage.setEmail(LoginPage.java:27)
+	at pages.LoginPage.loginSteps(LoginPage.java:57)
+	at stepDefinitions.ChangeCurrency.userChangeTheCurrency(ChangeCurrency.java:18)
+	at ✽.user change the currency.(file:///D:/Learning/EG%20FWD/Project/E-commerce%20App%20Automation%20Testing/src/main/resources/features/SC05_ChangeCurrency.feature:12)
+</textarea>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='exception-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Features
+					<div class='panel-lead'>12</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Scenarios
+					<div class='panel-lead'>12</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>125</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Jun 2, 2022 12:58:54 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Jun 2, 2022 01:01:55 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>00 03 00.752</div>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Skipped</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>@End-To-End</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+                parentCount: 12,
+				passParent: 11,
+				failParent: 1,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				childCount: 12,
+				passChild: 11,
+				failChild: 1,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				grandChildCount: 125,
+				passGrandChild: 123,
+				failGrandChild: 1,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 1,
+				infoGrandChild: 0,
+			};
+			</script>
+		
+		<script>
+			var timeline = {
+			        "User could register with valid data":31.735,"User Can Login Successfully.":5.385,"User could reset his/her password successfully":4.548,"Logged User could search for any product":5.874,"Logged User could switch between currencies US-Euro":12.354,"Logged user could select different Categories":3.283,"Logged user could filter with color":3.665,"Logged user could select different tags":6.633,"Logged user could add different products to Shopping cart":41.256,"SC10- Logged user could add different products to Wishlist":23.178,"SC11- Logged user could add different products to compare list":18.066,"SC12- Create successful Order":8.2
+			};
+		</script>
+		
+		  <script src='html/v3html-script.js' type='text/javascript'></script>
+		
+		
+		<script type='text/javascript'>
+				
+		</script> 
+
+	</body>
+</html>
